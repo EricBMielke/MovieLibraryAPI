@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "84328d28-9f09-44f9-9526-a86d1871be46",
+		"name": "MovieLibrary",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetMovies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Genre\": \"Drama\",\n        \"MovieId\": 6,\n        \"Title\": \"The Restarted\",\n        \"DirectorName\": \"Martin Morsese\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44378/movies",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostMovies",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Genre\": \"Drama\",\n        \"MovieId\": 6,\n        \"Title\": \"The Restarted\",\n        \"DirectorName\": \"Martin Morsese\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44378/movies",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSpecificMovie",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Genre\": \"Drama\",\n        \"MovieId\": 6,\n        \"Title\": \"The Restarted\",\n        \"DirectorName\": \"Martin Morsese\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44378/movies/movie/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"movies",
+						"movie",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteMovie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44378/movies/movie/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"movies",
+						"movie",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutMovie",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Genre\": \"RomCom\",\n        \"MovieId\": 3,\n        \"Title\": \"How to Lose a Guy in 10 days\",\n        \"DirectorName\": \"Jack Black\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44378/movies/movie/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44378",
+					"path": [
+						"movies",
+						"movie",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

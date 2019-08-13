@@ -24,10 +24,10 @@ namespace MovieLibrayAPI.Controllers
         // GET api/values/5
         [Route("movies/Movie/{MovieId}")]
         [HttpGet]
-        public string Get(int MovieId)
+        public Movie Get(int MovieId)
         {
-            // Retrieve movie by id from db logic
-            return "value";
+            Movie movie = db.Movies.Where(m => m.MovieId == MovieId).FirstOrDefault();
+            return movie;
         }
 
         // POST api/values

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using WebAPISample.Models;
+using MovieLibraryAPI.Models;
 
-namespace WebAPISample.Controllers
+namespace MovieLibrayAPI.Controllers
 {
     public class MovieController : ApiController
     {

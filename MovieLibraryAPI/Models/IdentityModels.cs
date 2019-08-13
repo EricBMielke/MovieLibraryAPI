@@ -1,8 +1,10 @@
-﻿using System.Security.Claims;
+﻿using System.Data.Entity;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using MovieLibraryAPI.Models;
 
 namespace MovieLibraryAPI.Models
 {
@@ -29,5 +31,6 @@ namespace MovieLibraryAPI.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Movie> Movies { get; set; }
     }
 }

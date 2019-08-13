@@ -12,7 +12,7 @@ namespace MovieLibrayAPI.Controllers
     public class MovieController : ApiController
     {
         ApplicationDbContext db = new ApplicationDbContext();
-        // GET api/values
+        // GET movies
         [Route("movies")]
         [HttpGet]
         public IEnumerable<Movie> Get()
@@ -21,8 +21,8 @@ namespace MovieLibrayAPI.Controllers
             return results;
         }
 
-        // GET api/values/5
-        [Route("movies/Movie/{MovieId}")]
+        // GET movies/movie/5
+        [Route("movies/movie/{MovieId}")]
         [HttpGet]
         public Movie Get(int MovieId)
         {
@@ -30,13 +30,23 @@ namespace MovieLibrayAPI.Controllers
             return movie;
         }
 
-        // POST api/values
+        // POST movies
+        [Route("movies")]
+        [HttpPost]
         public void Post([FromBody]Movie value)
         {
-            // Create movie in db logic
+            db.Movies.Add(new Movie()
+            {
+                MovieId = value.MovieId,
+                Title = value.Title,
+                Genre = value.Genre,
+                DirectorName = value.DirectorName
+            }) ; 
+
+            db.SaveChanges();
         }
 
-        // PUT api/values/5
+        // PUT movies
         public void Put(int id, [FromBody]string value)
         {
             // Update movie in db logic

@@ -46,10 +46,20 @@ namespace MovieLibrayAPI.Controllers
             db.SaveChanges();
         }
 
+      
         // PUT movies
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        [Route("movies/movie/{id}")]
+        public void Put(int id, [FromBody]Movie value)
         {
-            // Update movie in db logic
+            Movie movie = db.Movies.Where(m => m.MovieId == id).FirstOrDefault();
+
+            movie.MovieId = value.MovieId;
+            movie.Title = value.Title;
+            movie.Genre = value.Genre;
+            movie.DirectorName = value.DirectorName;
+
+            db.SaveChanges();
         }
 
         // DELETE movies/5

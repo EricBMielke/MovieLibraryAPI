@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using MovieLibraryAPI.Models;
 
@@ -10,15 +11,20 @@ namespace MovieLibrayAPI.Controllers
 {
     public class MovieController : ApiController
     {
+        ApplicationDbContext db = new ApplicationDbContext();
         // GET api/values
-        public IEnumerable<string> Get()
+        [Route("movies")]
+        [HttpGet]
+        public IEnumerable<Movie> Get()
         {
-            // Retrieve all movies from db logic
-            return new string[] { "movie1 string", "movie2 string" };
+            var results = db.Movies.AsEnumerable();
+            return results;
         }
 
         // GET api/values/5
-        public string Get(int id)
+        [Route("movies/Movie/{MovieId}")]
+        [HttpGet]
+        public string Get(int MovieId)
         {
             // Retrieve movie by id from db logic
             return "value";

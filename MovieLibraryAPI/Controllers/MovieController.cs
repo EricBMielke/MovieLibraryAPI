@@ -52,10 +52,14 @@ namespace MovieLibrayAPI.Controllers
             // Update movie in db logic
         }
 
-        // DELETE api/values/5
+        // DELETE movies/5
+        [Route("movies/movie/{id}")]
+        [HttpDelete]
         public void Delete(int id)
         {
-            // Delete movie from db logic
+            Movie movieDelete = db.Movies.Where(s => s.MovieId == id).FirstOrDefault(); 
+            db.Movies.Remove(movieDelete);
+            db.SaveChanges();
         }
     }
 

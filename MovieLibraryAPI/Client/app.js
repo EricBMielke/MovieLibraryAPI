@@ -12,7 +12,6 @@ $(document).ready(function(){
         var movie_data = '';
             $.each(data, function (key, value) {
                 movie_data += '<tr>';
-                movie_data += '<td>' + value.MovieId + '</td>';
                 movie_data += '<td>' + value.Genre + '</td>';
                 movie_data += '<td>' + value.Title + '</td>';
                 movie_data += '<td>' + value.DirectorName + '</td>';
@@ -22,3 +21,28 @@ $(document).ready(function(){
     });
 })
 
+
+function MakeMovie()
+    {
+        var data = {
+            Genre : document.getElementById("Genre").value,
+            Title : document.getElementById("Title").value,
+            DirectorName : document.getElementById("DirectorName").value,
+        };
+        return data;
+    }
+
+function AddMovie(){
+
+    let movie = MakeMovie();
+    $.ajax({
+    type: "POST",
+    url: 'https://localhost:44378/movies',
+    dataType : 'json',
+    data : movie,
+    success: function() {
+        alert("Success");
+        location.reload();
+    }
+    })
+}

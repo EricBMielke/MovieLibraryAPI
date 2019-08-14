@@ -1,10 +1,15 @@
-<script>
+
+$(document).ready(function(){
     $.ajax({
         type: "GET",
-        url: https://localhost:44378/movies,
-        data: { input: input },
-        success: function (data) {
-            var movie_data = '';
+        url: 'https://localhost:44378/movies',
+        dataType: 'json',
+        success: function () {
+            $('.movieData').html('')
+        }
+    })
+    .then(function(data){
+        var movie_data = '';
             $.each(data, function (key, value) {
                 movie_data += '<tr>';
                 movie_data += '<td>' + value.MovieId + '</td>';
@@ -13,7 +18,7 @@
                 movie_data += '<td>' + value.DirectorName + '</td>';
                 movie_data += '</tr>';
             });
-            $('#movie_table').append(movie_data);
-        });
-  });
-</script>
+            $('.movieData').append(movie_data);
+    });
+})
+

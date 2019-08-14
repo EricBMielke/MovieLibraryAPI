@@ -17,7 +17,7 @@ namespace MovieLibraryAPI
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
-            EnableCorsAttribute cors = new EnableCorsAttribute(origins: "", headers: "", methods: "*");
+            EnableCorsAttribute cors = new EnableCorsAttribute(origins: "*", headers: "*", methods: "*");
             config.EnableCors(cors);
             // Web API routes
             config.MapHttpAttributeRoutes();

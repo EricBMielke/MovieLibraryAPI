@@ -15,12 +15,12 @@ $(document).ready(function(){
                 movie_data += '<td>' + value.Genre + '</td>';
                 movie_data += '<td>' + value.Title + '</td>';
                 movie_data += '<td>' + value.DirectorName + '</td>';
+                movie_data += '<td><button class="edit" onclick = "GetSpecificMovie('+value.MovieId+')"data-key="'+ (key + 1) +'">Edit</button></td>';
                 movie_data += '</tr>';
             });
             $('.movieData').append(movie_data);
     });
 })
-
 
 function MakeMovie()
     {
@@ -46,3 +46,19 @@ function AddMovie(){
     }
     })
 }
+function GetSpecificMovie(id){
+    $.ajax({
+        type: "GET",
+        url: 'https://localhost:44378/movies/movie/'+id,
+        dataType: 'json',
+        success: function () {
+        }
+    })
+    .then(function(data){
+        $('#DirectorNameEdit').val(data.DirectorName),
+        $('#GenreEdit').val(data.Genre),
+        $('#TitleEdit').val(data.Title)
+    });
+}
+
+

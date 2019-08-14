@@ -54,7 +54,7 @@ namespace MovieLibrayAPI.Controllers
         {
             Movie movie = db.Movies.Where(m => m.MovieId == id).FirstOrDefault();
 
-            movie.MovieId = value.MovieId;
+            //movie.MovieId = value.MovieId;
             movie.Title = value.Title;
             movie.Genre = value.Genre;
             movie.DirectorName = value.DirectorName;

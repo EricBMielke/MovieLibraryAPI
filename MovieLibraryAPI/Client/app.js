@@ -57,8 +57,35 @@ function GetSpecificMovie(id){
     .then(function(data){
         $('#DirectorNameEdit').val(data.DirectorName),
         $('#GenreEdit').val(data.Genre),
-        $('#TitleEdit').val(data.Title)
+        $('#TitleEdit').val(data.Title),
+        $('#hiddenMovieId').val(data.MovieId)
     });
+}
+
+function UpdateMovie(){
+    let movie = PutMovie();
+    let id = $ ('#hiddenMovieId').val();
+    $.ajax({
+        type: "PUT",
+        url: 'https://localhost:44378/movies/movie/'+ id,
+        dataType : "JSON",
+        data : movie,
+        success : function(){
+            alert('Success')
+            location.reload();
+        }
+    })
+}
+
+function PutMovie()
+{ 
+    var data = {
+        Genre : document.getElementById("GenreEdit").value,
+        Title : document.getElementById("TitleEdit").value,
+        DirectorName : document.getElementById("DirectorNameEdit").value,
+        MovieId: this.MovieId
+    };
+    return data;
 }
 
 

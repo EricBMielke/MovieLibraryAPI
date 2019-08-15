@@ -41,7 +41,6 @@ function AddMovie(){
     dataType : 'json',
     data : movie,
     success: function() {
-        alert("Success");
         location.reload();
     }
     })
@@ -76,7 +75,6 @@ function UpdateMovie(){
         dataType : "JSON",
         data : movie,
         success : function(){
-            alert('Success')
             location.reload();
         }
     })

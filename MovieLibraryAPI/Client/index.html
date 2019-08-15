@@ -4,13 +4,15 @@
         <title> Movies </title>
     </head>
 <body>
-    <label id="movieCreate">
-        <input type="text" name="Genre" id = "Genre" placeholder="Enter Genre"></br>
-        <input type="text" name="Title" id = "Title" placeholder="Enter Title"></br>
-        <input type="text" name="DirectorName" id = "DirectorName" placeholder="Enter Director"></br>
-        <button onclick ="AddMovie()">Add Movie to List</button>
-    </label>
     <div class="container">
+    <h1 style="text-align:center;">Add Movie</h1>
+    <label id="movieCreate" style = "display: block; text-align: center;">
+        <input type="text" name="Genre" id = "Genre" placeholder="Enter Genre" style ="border-radius: 5px; text-align : center;"></br>
+        <input type="text" name="Title" id = "Title" placeholder="Enter Title" style ="border-radius: 5px; text-align : center;"></br>
+        <input type="text" name="DirectorName" id = "DirectorName" placeholder="Enter Director" style ="border-radius: 5px; text-align : center;"></br>
+        <button onclick ="AddMovie()"style ="border-radius: 5px; text-align : center;">Add Movie to List</button>
+    </label>
+    <h1 style="text-align:center;">Movie Database</h1>
         <div class="table-responsive">
             <table class="table" id="movie_table">
                 <thead>
@@ -23,12 +25,12 @@
                 <tbody class = "movieData">
                 </tbody>
             </table>
-            <h1 id = "EditHeader" style="display: none;">Edit Movie</h1>
-            <label id="movieCreate">
-                    <input type="text" name="Genre" id = "GenreEdit" style="display: none;"></br>
-                    <input type="text" name="Title" id = "TitleEdit" style="display: none;"></br>
-                    <input type="text" name="DirectorName" id = "DirectorNameEdit"style="display: none;"></br>
-                    <button id ="EditButton"onclick ="UpdateMovie()"style="display: none;">Save Edits</button>
+            <h1 id = "EditHeader" style="display: none; text-align:center;">Edit Movie</h1>
+            <label id="movieCreate" style = "display: block; text-align: center;">
+                    <input type="text" name="Genre" id = "GenreEdit" style="display: none;border-radius: 5px; text-align : center;"></br>
+                    <input type="text" name="Title" id = "TitleEdit" style="display: none;border-radius: 5px; text-align : center;"></br>
+                    <input type="text" name="DirectorName" id = "DirectorNameEdit"style="display: none;border-radius: 5px; text-align : center;"></br>
+                    <button id ="EditButton"onclick ="UpdateMovie()"style="display: none;border-radius: 5px; text-align : center;">Save Edits</button>
                 </label>
                 <input type="hidden" id="hiddenMovieId" name="hiddenId" value="0">
         </div>

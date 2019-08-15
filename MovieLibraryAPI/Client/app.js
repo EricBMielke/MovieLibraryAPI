@@ -17,6 +17,7 @@ $(document).ready(function(){
                 movie_data += '<td>' + value.DirectorName + '</td>';
                 movie_data += '<td><button class="edit" onclick = "GetSpecificMovie('+value.MovieId+')"data-key="'+ (key + 1) +'">Edit</button></td>';
                 movie_data += '<td><button class="edit" id ="pictureButton" onclick = "GetSpecificPicture('+value.MovieId+')"data-key="'+ (key + 1) +'">Picture</button></td>';
+                movie_data += '<td><button class="delete" onclick = "RemoveMovie('+value.MovieId+')" data-key="'+ (key + 1) +'">Delete</button></td>';
                 movie_data += '</tr>';
             });
             $('.movieData').append(movie_data);
@@ -112,4 +113,14 @@ function PutMovie()
     return data;
 }
 
+function RemoveMovie(Id){
+    $.ajax({
+        type:"DELETE",
+        url: 'https://localhost:44378/movies/movie/'+ Id,
+        dataType : "JSON",
+        success : function(){
+        }
+    })
+     location.reload();
+}
 

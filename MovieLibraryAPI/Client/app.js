@@ -26,11 +26,7 @@ $(document).ready(function(){
 function MakeMovie()
     {
         var data = {
-            Genre : document.getElementById("Genre").value,
-            Title : document.getElementById("Title").value,
-            DirectorName : document.getElementById("DirectorName").value,
-            PictureURL : document.getElementById("PictureURL").value,
-        };
+            Genre : asdfasdfads
         return data;
     }
 

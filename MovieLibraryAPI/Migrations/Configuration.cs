@@ -14,6 +14,7 @@ namespace MovieLibraryAPI.Migrations
 
         protected override void Seed(MovieLibraryAPI.Models.ApplicationDbContext context)
         {
+            jWOASDKFJASKDFJA
             //Seed Data
             //context.Movies.AddOrUpdate(
             //    new Models.Movie { Title = "The Departed", Genre = "Drama", DirectorName = "Martin Scorsese" , PictureURL = "https://resizing.flixster.com/WT_ZNx5qQ9N08xHyJkU8jqDpZ-Q=/206x305/v1.bTsxMTE2NjcyMTtqOzE4MjE5OzEyMDA7ODAwOzEyMDA"},

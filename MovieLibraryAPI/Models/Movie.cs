@@ -11,5 +11,6 @@ namespace MovieLibraryAPI.Models
         public int MovieId { get; set; }
         public string Title { get; set; }
         public string DirectorName { get; set; }
+        public string PictureURL { get; set; }
     }
 }

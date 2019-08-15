@@ -16,6 +16,7 @@ $(document).ready(function(){
                 movie_data += '<td>' + value.Title + '</td>';
                 movie_data += '<td>' + value.DirectorName + '</td>';
                 movie_data += '<td><button class="edit" onclick = "GetSpecificMovie('+value.MovieId+')"data-key="'+ (key + 1) +'">Edit</button></td>';
+                movie_data += '<td><button class="edit" id ="pictureButton" onclick = "GetSpecificPicture('+value.MovieId+')"data-key="'+ (key + 1) +'">Picture</button></td>';
                 movie_data += '</tr>';
             });
             $('.movieData').append(movie_data);
@@ -28,6 +29,7 @@ function MakeMovie()
             Genre : document.getElementById("Genre").value,
             Title : document.getElementById("Title").value,
             DirectorName : document.getElementById("DirectorName").value,
+            PictureURL : document.getElementById("PictureURL").value,
         };
         return data;
     }
@@ -57,14 +59,32 @@ function GetSpecificMovie(id){
         $("#GenreEdit").show();
         $("#TitleEdit").show();
         $("#DirectorNameEdit").show();
+        $("#PictureURLEdit").show();
         $("#EditButton").show();
         $("#EditHeader").show();
         $('#DirectorNameEdit').val(data.DirectorName),
+        $('#PictureURLEdit').val(data.PictureURL),
         $('#GenreEdit').val(data.Genre),
         $('#TitleEdit').val(data.Title),
         $('#hiddenMovieId').val(data.MovieId)
     });
 }
+
+function GetSpecificPicture(id){
+    $.ajax({
+        type: "GET",
+        url: 'https://localhost:44378/movies/movie/'+id,
+        dataType: 'json',
+        success: function () {
+        }
+    })
+    .then(function(data){
+        $('#MoviePicture').attr('src', data.PictureURL)
+        $("#MoviePicture").show();
+        $('#hiddenPictureURL').val(data.PictureURL)
+    });
+}
+
 
 function UpdateMovie(){
     let movie = PutMovie();
@@ -86,6 +106,7 @@ function PutMovie()
         Genre : document.getElementById("GenreEdit").value,
         Title : document.getElementById("TitleEdit").value,
         DirectorName : document.getElementById("DirectorNameEdit").value,
+        PictureURL : document.getElementById("PictureURLEdit").value,
         MovieId: this.MovieId
     };
     return data;

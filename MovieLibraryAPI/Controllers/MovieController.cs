@@ -40,7 +40,9 @@ namespace MovieLibrayAPI.Controllers
                 MovieId = value.MovieId,
                 Title = value.Title,
                 Genre = value.Genre,
-                DirectorName = value.DirectorName
+                DirectorName = value.DirectorName,
+                PictureURL = value.PictureURL
+
             }) ; 
 
             db.SaveChanges();
@@ -58,7 +60,7 @@ namespace MovieLibrayAPI.Controllers
             movie.Title = value.Title;
             movie.Genre = value.Genre;
             movie.DirectorName = value.DirectorName;
-
+            movie.PictureURL = value.PictureURL;
             db.SaveChanges();
         }
 

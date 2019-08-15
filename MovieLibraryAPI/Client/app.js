@@ -124,3 +124,14 @@ function RemoveMovie(Id){
      location.reload();
 }
 
+
+$(document).ready(function(){
+  $("#Search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#movie_table tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+

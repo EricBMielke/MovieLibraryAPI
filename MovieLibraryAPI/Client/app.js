@@ -55,6 +55,11 @@ function GetSpecificMovie(id){
         }
     })
     .then(function(data){
+        $("#GenreEdit").show();
+        $("#TitleEdit").show();
+        $("#DirectorNameEdit").show();
+        $("#EditButton").show();
+        $("#EditHeader").show();
         $('#DirectorNameEdit').val(data.DirectorName),
         $('#GenreEdit').val(data.Genre),
         $('#TitleEdit').val(data.Title),

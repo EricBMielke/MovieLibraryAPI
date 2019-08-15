@@ -23,17 +23,18 @@
                 <tbody class = "movieData">
                 </tbody>
             </table>
-            <h1>Edit Movie</h1>
+            <h1 id = "EditHeader" style="display: none;">Edit Movie</h1>
             <label id="movieCreate">
-                    <input type="text" name="Genre" id = "GenreEdit"></br>
-                    <input type="text" name="Title" id = "TitleEdit"></br>
-                    <input type="text" name="DirectorName" id = "DirectorNameEdit"></br>
-                    <button onclick ="UpdateMovie()">Save Edits</button>
+                    <input type="text" name="Genre" id = "GenreEdit" style="display: none;"></br>
+                    <input type="text" name="Title" id = "TitleEdit" style="display: none;"></br>
+                    <input type="text" name="DirectorName" id = "DirectorNameEdit"style="display: none;"></br>
+                    <button id ="EditButton"onclick ="UpdateMovie()"style="display: none;">Save Edits</button>
                 </label>
                 <input type="hidden" id="hiddenMovieId" name="hiddenId" value="0">
         </div>
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="app.js"></script>
 </html>
